@@ -1,0 +1,66 @@
+def main():
+    with open("day5.txt", "r") as f:
+        file = f.read()
+        arr = file.split("\n\n")
+    
+    img = arr[0].split("\n")
+    instructions = arr[1].split("\n")
+    # print(arr)
+    # print(img)
+    # img_list = img_to_lists(img)
+    instruction_list = []
+    for item in instructions:
+       item = [int(x) for x in item.split() if x.isdigit()]
+       instruction_list.append(item)
+
+    print(instruction_list)
+            
+
+def img_to_lists(list):
+    one = []
+    two = []
+    three = []
+    four = []
+    five = []
+    six = []
+    seven = []
+    eight = []
+    nine = []
+
+    for item in list:
+        one.append(str(item[0:4])) #one
+        two.append(str(item[4:8])) #two
+        three.append(str(item[8:12])) #3
+        four.append(str(item[12:16])) #4
+        five.append(str(item[16:20])) #5
+        six.append(str(item[20:24])) #6
+        seven.append(str(item[24:28])) #7
+        eight.append(str(item[28:32])) #8
+        nine.append(str(item[32:36])) #9
+
+    # one_ = one.reverse()
+    one_ = one[::-1]
+    two_ = two[::-1]
+    three_ = three[::-1]
+    four_ = four[::-1]
+    five_ = five[::-1]
+    six_ = six[::-1]
+    seven_ = seven[::-1]
+    eight_ = eight[::-1]
+    nine_ = nine[::-1]
+
+    # new_list =[one, two, three, four, five, six, seven, eight, nine]
+    
+    new_list =[one_, two_, three_, four_, five_, six_, seven_, eight_, nine_]
+
+    # for item in new_list:
+    #     print(item)
+    #     print("\n")
+
+    return new_list
+    
+def rearrange():
+    pass
+
+if __name__ == "__main__":
+    main()
